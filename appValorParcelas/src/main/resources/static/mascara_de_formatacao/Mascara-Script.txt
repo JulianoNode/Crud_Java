@@ -1,0 +1,101 @@
+=================================	
+Script para o header
+=================================
+
+
+<script>
+function formatar(mascara, documento){
+  var i = documento.value.length;
+  var saida = mascara.substring(0,1);
+  var texto = mascara.substring(i)
+  
+  if (texto.substring(0,1) != saida){
+            documento.value += texto.substring(0,1);
+  }
+  
+}
+</script>
+
+
+=================================	
+Inputs do formulário
+=================================
+
+
+CAMPO DATA
+<input type="text" name="data" maxlength="10" OnKeyPress="formatar('##/##/####', this)" >
+
+CAMPO TELEFONE
+<input type="text" name="tel" maxlength="12" OnKeyPress="formatar('##-####-####', this)" >
+
+CAMPO PREÇO
+<input type="text" name="tel" maxlength="9" OnKeyPress="formatar('#.###.###,##', this)" >
+
+CAMPO CEP
+<input type="text" name="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)" >
+ 
+CAMPO CPF
+<input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" >
+
+CAMPO HORA
+<input type="text" name="hora" maxlength="5" OnKeyPress="formatar('##:##', this)" >
+ 
+
+=================================	
+Dicas
+=================================
+
+Crie campos de acordo com a sua necessidade, e personalize o padrão deseja, como por exemplo
+Data de nascimento, RG, Celular entre outros.
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Numbers</h1>
+<h2>The toLocaleString() Method</h2>
+
+<p>toLocaleString() returns a number as a string, using local language format.</p>
+
+<p>The options parameter (object) describes the formatting:</p>
+
+<p id="demo"></p>
+
+<script>
+let num = 1000000;
+let text = num.toLocaleString("pt-BR", {style:"currency", currency:"USD"});
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("demo_test.txt");
+  });
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
+
+
+
+
+
+
